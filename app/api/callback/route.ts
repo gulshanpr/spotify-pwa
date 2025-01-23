@@ -58,7 +58,7 @@ export async function GET(req: NextRequest) {
 
     // TODO: Save access_token, refresh_token, and expiration time in the database along with the user's email or Spotify ID.
 
-    return NextResponse.redirect(`/home?access_token=${access_token}`);
+    return NextResponse.redirect(`http://${process.env.URI}/home?access_token=${access_token}`);
   } catch (error) {
     console.error("Error in /api/callback route:", error);
     return NextResponse.json(
