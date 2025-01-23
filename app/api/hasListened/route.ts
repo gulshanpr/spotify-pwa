@@ -4,7 +4,6 @@ export async function POST(req: NextRequest) {
   const body = await req.json();
   const { access_token } = body;
 
-  console.log("Access token in hasListened:", access_token);
 
   try {
     const response = await fetch(
@@ -17,7 +16,6 @@ export async function POST(req: NextRequest) {
     );
 
     const data = await response.json();
-    console.log("Current listening data:", data);
     return NextResponse.json(data);
   } catch (error) {
     console.error("Error in hasListened:", error);
